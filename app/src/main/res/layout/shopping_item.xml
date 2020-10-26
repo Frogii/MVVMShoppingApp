@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#FD8B83"
+    android:layout_marginBottom="10dp"
     android:padding="10dp">
 
     <TextView
@@ -22,9 +24,10 @@
         android:id="@+id/checkBuy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
         android:scaleX="1.7"
         android:scaleY="1.7"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,12 +35,24 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/ivDelete"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="17dp"
         android:src="@drawable/ic_delete"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNumberOfItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBuy"
+        app:layout_constraintEnd_toStartOf="@+id/checkBuy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkBuy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

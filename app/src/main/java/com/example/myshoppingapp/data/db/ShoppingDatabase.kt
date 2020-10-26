@@ -1,10 +1,10 @@
-package com.example.myshoppingapp.data.db.entities
+package com.example.myshoppingapp.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.myshoppingapp.data.db.ShoppingDao
+import com.example.myshoppingapp.data.db.entities.ShoppingItem
 
 @Database(
     entities = [ShoppingItem::class],
