@@ -36,13 +36,20 @@ class ShoppingRecAdapter(var items: List<ShoppingItem>, private val viewModel: S
             }
         }
 
+        when(item.isBought){
+            true -> holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkEnable))
+            false -> holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkDisable))
+        }
+
         holder.itemView.checkBuy.setOnClickListener {
             when (holder.itemView.checkBuy.isChecked) {
                 true -> {
-                    holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkEnable))
+                    item.isBought = true
+                    viewModel.addItem(item)
                 }
                 false -> {
-                    holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkDisable))
+                    item.isBought = false
+                    viewModel.addItem(item)
                 }
             }
         }
