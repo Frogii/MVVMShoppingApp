@@ -18,4 +18,8 @@ class ShoppingViewModel(private val repository: ShoppingRepository) : ViewModel(
     fun delete(item: ShoppingItem) = CoroutineScope(Dispatchers.Main).launch {
         repository.delete(item)
     }
+
+    fun deleteAllItems() = CoroutineScope(Dispatchers.Main).launch {
+        repository.deleteAllItems()
+    }
 }

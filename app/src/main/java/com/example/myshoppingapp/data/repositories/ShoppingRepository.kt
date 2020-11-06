@@ -11,4 +11,6 @@ class ShoppingRepository(private val db: ShoppingDatabase) {
 
     suspend fun delete(item: ShoppingItem) = db.getSoppingDao().delete(item)
 
+    suspend fun deleteAllItems() = db.getSoppingDao().deleteAllItems()
+
 }

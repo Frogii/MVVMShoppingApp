@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyShoppingApp</string>
+    <string name="clear_all">CLEAR ALL</string>
 </resources>
