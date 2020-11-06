@@ -37,8 +37,14 @@ class ShoppingRecAdapter(var items: List<ShoppingItem>, private val viewModel: S
         }
 
         when(item.isBought){
-            true -> holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkEnable))
-            false -> holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkDisable))
+            true -> {
+                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkEnable))
+                holder.itemView.checkBuy.isChecked = true
+            }
+            false -> {
+                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.checkDisable))
+                holder.itemView.checkBuy.isChecked = false
+            }
         }
 
         holder.itemView.checkBuy.setOnClickListener {
