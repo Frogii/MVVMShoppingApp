@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myshoppingapp.R
 import com.example.myshoppingapp.data.db.entities.ShoppingItem
 import com.example.myshoppingapp.ui.ShoppingViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.shopping_item.view.*
 
 class ShoppingRecAdapter(var items: List<ShoppingItem>, private val viewModel: ShoppingViewModel) :
@@ -27,6 +28,12 @@ class ShoppingRecAdapter(var items: List<ShoppingItem>, private val viewModel: S
 
         holder.itemView.ivDelete.setOnClickListener {
             viewModel.delete(item)
+            Snackbar.make(holder.itemView, "Item deleted", Snackbar.LENGTH_LONG).apply {
+                setAction("UNDO") {
+                    viewModel.addItem(item)
+                }
+                    .show()
+            }
         }
 
         holder.itemView.checkBuy.setOnClickListener {
