@@ -2,11 +2,13 @@ package com.example.myshoppingapp.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDialog
 import com.example.myshoppingapp.R
 import com.example.myshoppingapp.data.db.entities.ShoppingItem
 import kotlinx.android.synthetic.main.dialog_add_shopping_item.*
+
 
 class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogListener) :
     AppCompatDialog(context) {
@@ -14,6 +16,11 @@ class AddShoppingItemDialog(context: Context, var addDialogListener: AddDialogLi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_add_shopping_item)
+
+        etName.requestFocus()
+
+        this.window?.setSoftInputMode(
+            WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE)
 
         tvAdd.setOnClickListener {
             val name = etName.text.toString()
